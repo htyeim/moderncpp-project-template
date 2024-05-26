@@ -1,9 +1,10 @@
 [requires]
-openssl/3.2.1
-doctest/2.4.11
+openssl/[>=3.2.1]
+doctest/[>=2.4.11]
 
 [generators]
 CMakeDeps
+CMakeToolchain
 
 [options]
 pkg/openssl:shared=False

@@ -1,4 +1,4 @@
 build/
 *.pyc
-.vscode
 CMakeUserPresets.json
+.cache/

@@ -1,0 +1,65 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "build debug prepare",
+			"command": "rm -rf build && mkdir -p build &&cd build && conan install .. --output-folder=. --build=missing --settings=build_type=Debug && cmake -G 'Unix Makefiles' --preset 'conan-debug' -DCMAKE_BUILD_TYPE=Debug ..",
+			"args": [],
+			"dependsOn": [],
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			},
+		},
+		{
+			"type": "shell",
+			"label": "cmake: build-debug",
+			"command": "cmake",
+			"args": [
+				"--build",
+				".",
+			],
+			"dependsOn": [
+				"build debug prepare"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"options": {
+				"cwd": "${workspaceFolder}/build/"
+			},
+			"problemMatcher": [],
+		},
+		{
+			"type": "shell",
+			"label": "build release prepare",
+			"command": "rm -rf build && mkdir -p build &&cd build && conan install .. --output-folder=. --build=missing --profile=default && cmake -G 'Unix Makefiles' --preset 'conan-release' -DCMAKE_BUILD_TYPE=Release ..",
+			"args": [],
+			"dependsOn": [],
+			"options": {
+				"cwd": "${workspaceFolder}/"
+			},
+		},
+		{
+			"type": "shell",
+			"label": "cmake: build-release",
+			"command": "cmake",
+			"args": [
+				"--build",
+				".",
+			],
+			"dependsOn": [
+				"build release prepare"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"options": {
+				"cwd": "${workspaceFolder}/build/"
+			},
+			"problemMatcher": [],
+		},
+	]
+}
