@@ -1,8 +1,13 @@
-#include "hellolib.h"
+#include <iostream>
 #include <print>
 #include <thread>
 
-int main() {
+#include "hellolib.h"
+
+int main(int argc, char* argv[]) {
+  for (int i = 0; i < argc; ++i) {
+    std::cout << argv[i] << "\n";
+  }
   hello::hellolib hello{};
   std::thread th{&hello::hellolib::saySomething, hello, "hell thread"};
 
@@ -16,5 +21,6 @@ int main() {
     return error_code;
   }
 #endif
+  th.join();
   return 0;
 }

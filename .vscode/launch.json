@@ -5,20 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(lldb) Launch",
             "type": "lldb",
             "request": "launch",
-            "name": "debug helloapp-d",
-            "program": "${workspaceFolder}/build/project/helloapp/helloapp-d",
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "release helloapp",
-            "program": "${workspaceFolder}/build/project/helloapp/helloapp",
-            "args": [],
-            "cwd": "${workspaceFolder}"
+            // Resolved by CMake Tools:
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [
+                "CMake Tools",
+                "test"
+            ],
+            "stopOnEntry": false,
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PATH": "${env:PATH}:${command:cmake.getLaunchTargetDirectory}",
+                "OTHER_VALUE": "Something something"
+            },
+            "console": "integratedTerminal",
         },
     ]
 }

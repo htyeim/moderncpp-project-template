@@ -13,6 +13,7 @@ endif()
 #####################################
 add_subdirectory(hellolib)
 add_subdirectory(helloapp)
+add_subdirectory(appbin)
 
 #####################################
 # Define Install Targets

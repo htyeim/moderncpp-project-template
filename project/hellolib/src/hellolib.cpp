@@ -23,8 +23,8 @@ int32_t hellolib::saySomething(const std::string &something) const noexcept {
 }
 
 #ifdef WITH_OPENSSL
-int32_t
-hellolib::saySomethingHashed(const std::string &something) const noexcept {
+int32_t hellolib::saySomethingHashed(
+    const std::string &something) const noexcept {
   if (something.empty()) {
     std::cerr << "No value passed\n";
     return 1;

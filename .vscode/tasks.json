@@ -10,6 +10,7 @@
 			"options": {
 				"cwd": "${workspaceFolder}/"
 			},
+			"problemMatcher": [],
 		},
 		{
 			"type": "shell",
@@ -40,6 +41,7 @@
 			"options": {
 				"cwd": "${workspaceFolder}/"
 			},
+			"problemMatcher": [],
 		},
 		{
 			"type": "shell",

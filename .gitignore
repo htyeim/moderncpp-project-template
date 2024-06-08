@@ -1,4 +1,6 @@
 build/
 *.pyc
 CMakeUserPresets.json
+conan_generate/
 .cache/
+.DS_Store
