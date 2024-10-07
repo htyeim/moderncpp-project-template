@@ -11,7 +11,7 @@ class ImGuiExample(ConanFile):
     # options = "pkg/openssl:shared=False"
 
     def requirements(self):
-        self.requires("openssl/[>=3.2.1]")
+        self.requires("openssl/[>=3.2.2]")
         self.requires("doctest/[>=2.4.11]")
         self.requires("implot/[>=0.16]")
         self.requires("imgui/[>=1.90.5]")
